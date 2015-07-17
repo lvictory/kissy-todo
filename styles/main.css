@@ -1,0 +1,38 @@
+.edit-wrapper {
+	display:none;
+}
+
+.editing .todo-preview {
+	display:none;
+}
+
+.editing .edit-wrapper {
+	display:block;
+}
+
+.todo-preview, .edit-wrapper {
+	width: 300px;
+}
+
+.todo-edit {
+	display: block;
+}
+
+.todo-preview {
+	position: relative;
+}
+
+.ico-delete {
+	position: absolute;
+	right: 0;
+	top: 0;
+	display:none;
+}
+
+.todo-preview:hover .ico-delete {
+	display: block;
+}
+
+.todo-check, .container {
+	display: inline-block;
+} 

@@ -1,0 +1,21 @@
+{
+  "name": "kissy-todo",
+  "version": "0.0.1",
+  "description": "an kissy exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "kissy",
+    "xtemplate"
+  ],
+  "author": "Lv Xinsheng",
+  "license": "ISC",
+  "dependencies": {
+    "kissy": "^1.4.8"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}

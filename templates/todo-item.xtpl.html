@@ -1,0 +1,10 @@
+<input type="checkbox" class="todo-check" {{#if checked}} checked {{/if}} >
+<div class="container {{#if editing}}editing{{/if}}">
+	<div class="todo-preview">
+		<p class="todo-content">{{todo}}</p>
+		<a href="javascript:void(0);" class="ico-delete">X</a>
+	</div>
+	<div class="edit-wrapper">
+		<input type="text" value="{{todo}}" class="todo-edit" autoFocus selected>
+	</div>
+</div>
