@@ -37,7 +37,7 @@ KISSY.add(function(S, require, exports, module) {
 			var todo = this.getAttrVals();
 			var htmlFragment = new XTemplate(this.template).render(todo);
 			this.el.empty();
-			this.el.append(htmlFragment);			
+			this.el.append(htmlFragment);
 		},
 
 		// 绑定事件
@@ -48,6 +48,8 @@ KISSY.add(function(S, require, exports, module) {
 			Event.delegate(this.el, 'dblclick', '.todo-content', this.toggleEdit, this);
 			//失焦保存
 			Event.delegate(this.el, 'focusout', '.todo-edit', this.saveTodo, this);
+			//选中todo
+			Event.delegate(this.el, 'change', '.todo-check', this.toggleCheck, this);
 		},
 
 		// 双击编辑响应方法
@@ -78,11 +80,16 @@ KISSY.add(function(S, require, exports, module) {
 			this.fire('deleteTodo', {
 				todoData: this.getAttrVals()
 			});
-			// 删除该对象
-			this.close();
 		},
 
 		// checkbox选中响应方法
+		toggleCheck: function(e) {
+			var checked = e.target.checked ? true : false;
+			this.set('checked', checked, {silent: true});
+			this.fire("checkTodo", {
+				todoData: this.getAttrVals()
+			});
+		},
 
 		// 删除时的close方法
 		close: function() {

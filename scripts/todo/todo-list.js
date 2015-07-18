@@ -31,7 +31,7 @@ KISSY.add(function(S, require, exports, module) {
 
 				todoItem.on('editTodo', this.onTodoItemEdit, this);
 				todoItem.on('deleteTodo', this.onTodoItemDelete, this);
-				// todoItem.on('checkTodo', this.onTodoItemChecked, this);
+				todoItem.on('checkTodo', this.onTodoItemChecked, this);
 
 				todoItem.render();
 				// 添加每个subView的节点到this.el中
@@ -67,8 +67,19 @@ KISSY.add(function(S, require, exports, module) {
 		},
 
 		// todoItem选中时响应事件，未来完成
-		onTodoItemChecked: function(todoItem) {
-
+		onTodoItemChecked: function(todoTarget) {
+			var checkedNum = 0;
+			// 修改todoList
+			for(var i = 0, length = this.todoList.length; i < length; i++) {
+				if(todoTarget.todoData.uid == this.todoList[i].uid) {
+					this.todoList[i].checked = todoTarget.todoData.checked;
+				}
+				if(this.todoList[i].checked) {
+					checkedNum++;
+				}
+			}
+			// 触发toggleTodoItem事件，由父view todo监听，传递出最新的todoList
+			this.fire("toggleTodoItem", {checkedNum: checkedNum});
 		}
 	});
 

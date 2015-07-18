@@ -22,7 +22,12 @@ KISSY.add(function(S, require, exports, module) {
 				if(e.keyCode !== 13) {
 					return null;
 				}
+				
 				var todoItem = e.target.value;
+				if(todoItem === "" || todoItem === undefined) {
+					return null;
+				}
+
 				this.fire("saveTodoItem", {
 					todoItem: {
 						todo: todoItem,

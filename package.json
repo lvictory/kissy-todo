@@ -13,7 +13,10 @@
   "author": "Lv Xinsheng",
   "license": "ISC",
   "dependencies": {
-    "kissy": "^1.4.8"
+    "gulp": "^3.9.0",
+    "gulp-xtemplate": "^2.1.0",
+    "kissy": "^1.4.8",
+    "xtemplate": "^4.3.0"
   },
   "devDependencies": {
     "gulp": "^3.9.0"

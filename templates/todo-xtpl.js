@@ -14,7 +14,7 @@ KISSY.add(function (S, require, exports, module) {
                 getPropertyUtil = utils.getProperty,
                 runInlineCommandUtil = utils.runInlineCommand,
                 getPropertyOrRunCommandUtil = utils.getPropertyOrRunCommand;
-            buffer += '<header class="todo-header"></header>\r\n<section class="todo-container"></section>';
+            buffer += '<header class="todo-header"></header>\r\n<section class="todo-container"></section>\r\n<footer class="todo-state"></footer>';
             return buffer;
         };
 });
